@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boss Of Melody</title>
+  <link rel="icon" href="BOM.PNG" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Anton', sans-serif;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-gradient {
+      background: linear-gradient(270deg, #a855f7, #ec4899, #8b5cf6);
+      background-size: 600% 600%;
+      animation: gradient 6s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .pulse {
+      animation: pulse 3s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.85; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .fade-in {
+      animation: fadeInScale 3s ease forwards;
+    }
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white min-h-screen overflow-x-hidden">
+
+  <!-- ✅ NAVBAR -->
+  <nav class="px-4 shadow-md bg-black/60 backdrop-blur-md sticky top-0 z-50">
+    <div class="flex items-center justify-between py-4">
+      <a href="#">
+        <img src="BOM.PNG" alt="Logo" class="w-16 h-16 object-contain">
+      </a>
+      <button id="menu-btn" class="text-white md:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <ul class="hidden md:flex space-x-6 text-lg">
+        <li><a href="#about" class="hover:text-fuchsia-400 transition">Sobre</a></li>
+        <li><a href="#artists" class="hover:text-fuchsia-400 transition">Lanzamientos</a></li>
+        <li><a href="#pricing" class="hover:text-fuchsia-400 transition">Servicios</a></li>
+        <li><a href="#contact" class="hover:text-fuchsia-400 transition">Contacto</a></li>
+      </ul>
+    </div>
+    <ul id="mobile-menu" class="hidden flex-col space-y-2 pb-4 md:hidden text-lg">
+      <li><a href="#about" class="block px-3 py-2 hover:text-fuchsia-400">Sobre</a></li>
+      <li><a href="#artists" class="block px-3 py-2 hover:text-fuchsia-400">Lanzamientos</a></li>
+      <li><a href="#pricing" class="block px-3 py-2 hover:text-fuchsia-400">Servicios</a></li>
+      <li><a href="#contact" class="block px-3 py-2 hover:text-fuchsia-400">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ✅ HERO -->
+  <section class="relative flex flex-col justify-center items-center text-center h-screen overflow-hidden">
+    <div class="absolute inset-0 bg-[url('hero-bg.PNG')] bg-cover bg-center brightness-50"></div>
+    <div class="absolute inset-0 animate-gradient opacity-30 mix-blend-overlay"></div>
+    <h1 class="relative text-6xl md:text-8xl z-10 font-extrabold fade-in">Boss Of Melody</h1>
+    <p class="relative text-2xl z-10 mt-4 fade-in" style="animation-delay: 0.5s;">El futuro suena aquí</p>
+  </section>
+
+  <!-- ✅ ABOUT -->
+  <section id="about" class="py-20 px-4 reveal">
+    <h2 class="text-5xl text-center mb-6 animate-gradient bg-clip-text text-transparent font-bold">Sobre Nosotros</h2>
+    <p class="max-w-3xl mx-auto text-center text-gray-300 text-xl">
+      Descubre la nueva ola de artistas que redefinen el sonido, seleccionados por Moises Marsh.
+      Melodías que conectan y cruzan fronteras.
+    </p>
+  </section>
+
+  <!-- ✅ ARTISTS -->
+  <section id="artists" class="py-20 px-4 reveal">
+    <h2 class="text-5xl text-center mb-10 animate-gradient bg-clip-text text-transparent font-bold">Últimos Lanzamientos</h2>
+    <div class="flex flex-wrap justify-center gap-10">
+      <div class="relative w-full sm:w-80 overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition">
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/sDLH2cgmLbw" frameborder="0" allowfullscreen></iframe>
+        <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
+          <h3 class="text-2xl font-bold text-fuchsia-400">SANTADIABLA</h3>
+        </div>
+      </div>
+      <div class="relative w-full sm:w-80 overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition">
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/EydY9HM966M" frameborder="0" allowfullscreen></iframe>
+        <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
+          <h3 class="text-2xl font-bold text-fuchsia-400">Karolina</h3>
+        </div>
+      </div>
+      <div class="relative w-full sm:w-80 overflow-hidden rounded-2xl shadow-2xl transform hover:scale-105 transition">
+        <iframe width="100%" height="215" src="https://www.youtube.com/embed/sLKIRcDpAJs" frameborder="0" allowfullscreen></iframe>
+        <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
+          <h3 class="text-2xl font-bold text-fuchsia-400">Obsesión</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ PRICING -->
+  <section id="pricing" class="py-20 px-4 reveal">
+    <h2 class="text-5xl text-center mb-10 animate-gradient bg-clip-text text-transparent font-bold">Servicios</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="bg-gradient-to-br from-purple-800 to-fuchsia-600 rounded-xl p-8 w-full sm:w-64 text-center hover:scale-105 transition">
+        <h3 class="text-2xl mb-2">Studio Recording</h3>
+        <p>$200 sesión</p>
+      </div>
+      <div class="bg-gradient-to-br from-purple-800 to-fuchsia-600 rounded-xl p-8 w-full sm:w-64 text-center hover:scale-105 transition">
+        <h3 class="text-2xl mb-2">Mixing & Mastering</h3>
+        <p>$100 por pista</p>
+      </div>
+      <div class="bg-gradient-to-br from-purple-800 to-fuchsia-600 rounded-xl p-8 w-full sm:w-64 text-center hover:scale-105 transition">
+        <h3 class="text-2xl mb-2">Promociones</h3>
+        <p>Solicita cotización</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ CONTACT / REDES -->
+  <section id="contact" class="py-20 px-4 reveal">
+    <h2 class="text-5xl text-center mb-10 animate-gradient bg-clip-text text-transparent font-bold">Síguenos & Visítanos</h2>
+
+    <div class="flex justify-center gap-6 mb-10">
+      <a href="https://wa.me/50663040420" target="_blank" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow pulse text-2xl">📲</a>
+      <a href="https://www.instagram.com/TU_INSTAGRAM" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white p-4 rounded-full shadow text-2xl">📸</a>
+      <a href="https://www.youtube.com/@TU_CANAL" target="_blank" class="bg-red-600 hover:bg-red-700 text-white p-4 rounded-full shadow text-2xl">▶️</a>
+      <a href="mailto:contact@bossofmelody.com" class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow text-2xl">✉️</a>
+    </div>
+
+    <!-- ✅ MAPA -->
+    <div class="max-w-4xl mx-auto">
+      <iframe class="w-full h-80 rounded-xl shadow-lg"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3930.123456789!2d-84.123456!3d9.934567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwNTUnMDAuNCJOIDg0wrAwNyczMy4xIlc!5e0!3m2!1ses!2scr!4vXXXXXXXXXX"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="text-center mt-6 text-gray-400">
+      <p>Email: contact@bossofmelody.com</p>
+      <p>Tel: +506 6304-0420</p>
+      <p>Ubicación: San José, Costa Rica</p>
+    </div>
+  </section>
+
+  <!-- ✅ FOOTER -->
+  <footer class="bg-black text-white text-center py-6">
+    &copy; 2025 Boss Of Melody By Moises Marsh.
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+    });
+
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
