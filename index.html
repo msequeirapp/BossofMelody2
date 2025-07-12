@@ -79,31 +79,44 @@
 
 <body class="bg-black text-white min-h-screen overflow-x-hidden">
 
-  <!-- ✅ NAVBAR -->
-  <nav class="px-4 shadow-lg bg-black/70 backdrop-blur-md sticky top-0 z-50">
-    <div class="flex items-center justify-between py-4">
-      <a href="#">
-        <img src="BOM.png" alt="Logo" class="w-16 h-16 object-contain hover:scale-105 transition-all duration-300">
+ <!-- ✅ NAVBAR MODERNO -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center space-x-2">
+        <img src="BOM.png" alt="Logo" class="w-10 h-10 object-contain">
       </a>
-      <button id="menu-btn" class="text-white md:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 fill-current" viewBox="0 0 24 24">
-          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-        </svg>
-      </button>
-      <ul class="hidden md:flex space-x-6 text-lg">
-        <li><a href="#about" class="hover:text-fuchsia-400 transition">Sobre</a></li>
-        <li><a href="#artists" class="hover:text-fuchsia-400 transition">Lanzamientos</a></li>
-        <li><a href="#pricing" class="hover:text-fuchsia-400 transition">Servicios</a></li>
-        <li><a href="#contact" class="hover:text-fuchsia-400 transition">Contacto</a></li>
-      </ul>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="text-white hover:text-fuchsia-400 transition">Sobre</a>
+        <a href="#artists" class="text-white hover:text-fuchsia-400 transition">Lanzamientos</a>
+        <a href="#pricing" class="text-white hover:text-fuchsia-400 transition">Servicios</a>
+        <a href="#contact" class="text-white hover:text-fuchsia-400 transition">Contacto</a>
+      </div>
+
+      <!-- Mobile Button -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
-    <ul id="mobile-menu" class="hidden flex-col space-y-2 pb-4 md:hidden text-lg">
-      <li><a href="#about" class="block px-3 py-2 hover:text-fuchsia-400">Sobre</a></li>
-      <li><a href="#artists" class="block px-3 py-2 hover:text-fuchsia-400">Lanzamientos</a></li>
-      <li><a href="#pricing" class="block px-3 py-2 hover:text-fuchsia-400">Servicios</a></li>
-      <li><a href="#contact" class="block px-3 py-2 hover:text-fuchsia-400">Contacto</a></li>
-    </ul>
-  </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden flex flex-col space-y-2 px-4 pb-4">
+    <a href="#about" class="text-white hover:text-fuchsia-400 transition">Sobre</a>
+    <a href="#artists" class="text-white hover:text-fuchsia-400 transition">Lanzamientos</a>
+    <a href="#pricing" class="text-white hover:text-fuchsia-400 transition">Servicios</a>
+    <a href="#contact" class="text-white hover:text-fuchsia-400 transition">Contacto</a>
+  </div>
+</nav>
 
  <!-- ✅ HERO -->
   <section class="relative flex flex-col justify-center items-center text-center h-screen overflow-hidden">
