@@ -49,6 +49,31 @@
       0% { opacity: 0; transform: scale(0.95); }
       100% { opacity: 1; transform: scale(1); }
     }
+
+    .scrollbar-hide {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+  .glitch-img {
+  aspect-ratio: 1 / 1;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.3), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.glitch-img:hover {
+  transform: scale(1.05) rotate(-0.3deg);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(139, 92, 246, 0.5);
+}
+
+
   </style>
 </head>
 
@@ -80,7 +105,7 @@
     </ul>
   </nav>
 
-  <!-- ✅ HERO -->
+ <!-- ✅ HERO -->
   <section class="relative flex flex-col justify-center items-center text-center h-screen overflow-hidden">
     <div class="absolute inset-0 bg-[url('hero-bg.PNG')] bg-cover bg-center brightness-50"></div>
     <div class="absolute inset-0 animate-gradient opacity-20 mix-blend-overlay"></div>
@@ -88,86 +113,77 @@
     <p class="relative text-2xl z-10 mt-4 fade-in drop-shadow" style="animation-delay: 0.5s;">El futuro suena aquí</p>
   </section>
 
- <!-- ✅ ABOUT con GALERÍA -->
-<section id="about" class="py-20 px-4 reveal">
+  <section id="about" class="py-20 px-4 reveal">
   <h2 class="text-5xl text-center mb-6 animate-gradient bg-clip-text text-transparent font-bold">Sobre Nosotros</h2>
   <p class="max-w-3xl mx-auto text-center text-gray-300 text-xl leading-relaxed mb-10">
     Boss Of Melody es el núcleo de la nueva generación musical curada por Moises Marsh.
     Nuestro objetivo es dar vida a melodías que conecten culturas, pasiones y corazones.
   </p>
 
-  <!-- ✅ Galería estilo álbum -->
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
-    <div class="overflow-hidden rounded-2xl transform hover:scale-105 transition shadow-lg">
-      <img src="album1.PNG" alt="Sesión 1" class="w-full h-60 object-cover">
-    </div>
-    <div class="overflow-hidden rounded-2xl transform hover:scale-105 transition shadow-lg">
-      <img src="album2.PNG" alt="Sesión 2" class="w-full h-60 object-cover">
-    </div>
-    <div class="overflow-hidden rounded-2xl transform hover:scale-105 transition shadow-lg">
-      <img src="album3.PNG" alt="Estudio" class="w-full h-60 object-cover">
-    </div>
-    <div class="overflow-hidden rounded-2xl transform hover:scale-105 transition shadow-lg">
-      <img src="album4.PNG" alt="Backstage" class="w-full h-60 object-cover">
-    </div>
-    <div class="overflow-hidden rounded-2xl transform hover:scale-105 transition shadow-lg">
-      <img src="album5.PNG" alt="Fan Moment" class="w-full h-60 object-cover">
-    </div>
-    <div class="overflow-hidden rounded-2xl transform hover:scale-105 transition shadow-lg">
-      <img src="album6.PNG" alt="Live Show" class="w-full h-60 object-cover">
-    </div>
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <img src="album1.jpeg" alt="Imagen 1" class="glitch-img">
+    <img src="album9.jpeg" alt="Imagen 2" class="glitch-img">
+    <img src="album3.jpeg" alt="Imagen 3" class="glitch-img">
+    <img src="album7.jpeg" alt="Imagen 7" class="glitch-img">
+    <img src="album8.jpeg" alt="Imagen 8" class="glitch-img">
+    <img src="album2.jpeg" alt="Imagen 9" class="glitch-img">
+    <img src="album10.jpeg" alt="Imagen 10" class="glitch-img">
+    <img src="album11.jpeg" alt="Imagen 11" class="glitch-img">
   </div>
 </section>
 
-  <!-- ✅ ARTISTS EXTENDIDO -->
+
+
+
+
+
+
+<!-- ✅ ARTISTS EXTENDIDO -->
 <section id="artists" class="py-20 px-4 reveal">
   <h2 class="text-5xl text-center mb-10 animate-gradient bg-clip-text text-transparent font-bold">Últimos Lanzamientos</h2>
-  <div class="flex flex-wrap justify-center gap-10">
 
-    <!-- Originales -->
-    <div class="relative w-full sm:w-80 overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 hover:shadow-fuchsia-500/40 transition">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl hover:scale-105 hover:shadow-fuchsia-500/40 transition">
       <iframe width="100%" height="215" src="https://www.youtube.com/embed/sDLH2cgmLbw" frameborder="0" allowfullscreen></iframe>
       <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
         <h3 class="text-2xl font-bold text-fuchsia-400">SANTADIABLA</h3>
       </div>
     </div>
 
-    <div class="relative w-full sm:w-80 overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 hover:shadow-fuchsia-500/40 transition">
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl hover:scale-105 hover:shadow-fuchsia-500/40 transition">
       <iframe width="100%" height="215" src="https://www.youtube.com/embed/EydY9HM966M" frameborder="0" allowfullscreen></iframe>
       <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
         <h3 class="text-2xl font-bold text-fuchsia-400">Karolina</h3>
       </div>
     </div>
 
-    <div class="relative w-full sm:w-80 overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 hover:shadow-fuchsia-500/40 transition">
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl hover:scale-105 hover:shadow-fuchsia-500/40 transition">
       <iframe width="100%" height="215" src="https://www.youtube.com/embed/sLKIRcDpAJs" frameborder="0" allowfullscreen></iframe>
       <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
         <h3 class="text-2xl font-bold text-fuchsia-400">Obsesión</h3>
       </div>
     </div>
 
-    <!-- Nuevos -->
-    <div class="relative w-full sm:w-80 overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 hover:shadow-fuchsia-500/40 transition">
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl hover:scale-105 hover:shadow-fuchsia-500/40 transition">
       <iframe width="100%" height="215" src="https://www.youtube.com/embed/r3qekxavQGI?si=sFrg7ktJk2Xl8-cx" frameborder="0" allowfullscreen></iframe>
       <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
         <h3 class="text-2xl font-bold text-fuchsia-400">Como lo baila</h3>
       </div>
     </div>
 
-    <div class="relative w-full sm:w-80 overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 hover:shadow-fuchsia-500/40 transition">
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl hover:scale-105 hover:shadow-fuchsia-500/40 transition">
       <iframe width="100%" height="215" src="https://www.youtube.com/embed/qELlQ6KylBo?si=ivfextF2bTaWy6r9" frameborder="0" allowfullscreen></iframe>
       <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
         <h3 class="text-2xl font-bold text-fuchsia-400">Talvez</h3>
       </div>
     </div>
 
-    <div class="relative w-full sm:w-80 overflow-hidden rounded-3xl shadow-2xl transform hover:scale-105 hover:shadow-fuchsia-500/40 transition">
+    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl hover:scale-105 hover:shadow-fuchsia-500/40 transition">
       <iframe width="100%" height="215" src="https://www.youtube.com/embed/1QvFDX39zlM?si=VPOjQWm_XENE-_M0" frameborder="0" allowfullscreen></iframe>
       <div class="absolute bottom-0 bg-black/70 w-full text-center py-4">
         <h3 class="text-2xl font-bold text-fuchsia-400">Así me gusta a mí</h3>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -175,32 +191,28 @@
 <section id="pricing" class="py-20 px-4 reveal">
   <h2 class="text-5xl text-center mb-10 animate-gradient bg-clip-text text-transparent font-bold">Servicios</h2>
 
-  <!-- Fila 1 -->
-  <div class="flex flex-wrap justify-center gap-8 mb-8">
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 w-full sm:w-64 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
       <h3 class="text-2xl mb-2">Studio Recording</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 w-full sm:w-64 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
       <h3 class="text-2xl mb-2">Mixing & Mastering</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 w-full sm:w-64 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
       <h3 class="text-2xl mb-2">Song Writing</h3>
     </div>
-  </div>
-
-  <!-- Fila 2 -->
-  <div class="flex flex-wrap justify-center gap-8">
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 w-full sm:w-64 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
       <h3 class="text-2xl mb-2">Vocal Coach</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 w-full sm:w-64 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
       <h3 class="text-2xl mb-2">Marketing</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 w-full sm:w-64 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
       <h3 class="text-2xl mb-2">Beats Personalizados</h3>
     </div>
   </div>
 </section>
+
 
 
     <!-- ✅ Redes con logos -->
@@ -252,7 +264,7 @@
 
 
     <div class="text-center mt-6 text-gray-400">
-      <p>Email: contact@bossofmelody.com</p>
+      <p>Email: bossofmelodycr@gmail.com</p>
       <p>Tel: +506 6304-0420</p>
       <p>Ubicación: San José, Costa Rica</p>
     </div>
