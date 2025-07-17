@@ -73,11 +73,19 @@
   box-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(139, 92, 246, 0.5);
 }
 
-
+  html {
+    scroll-behavior: smooth;
+  }
   </style>
 </head>
 
 <body class="bg-black text-white min-h-screen overflow-x-hidden">
+
+  <!-- ✅ Pantalla de Carga -->
+<div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-[9999] transition-opacity duration-500">
+  <img src="BOM.png" alt="Boss Of Melody Logo" class="w-24 h-24 animate-bounce">
+</div>
+
 
  <!-- ✅ NAVBAR MODERNO -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md shadow-md">
@@ -197,34 +205,25 @@
   </div>
 </section>
 
-  <!-- ✅ PRICING -->
+<!-- ✅ PRICING -->
 <section id="pricing" class="py-20 px-4 reveal">
   <h2 class="text-5xl text-center mb-10 animate-gradient bg-clip-text text-transparent font-bold">Servicios</h2>
 
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+  <div class="grid grid-cols-2 gap-6 max-w-6xl mx-auto items-stretch">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition h-full flex flex-col justify-center">
       <h3 class="text-2xl mb-2">Studio Recording</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition h-full flex flex-col justify-center">
       <h3 class="text-2xl mb-2">Mixing & Mastering</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition h-full flex flex-col justify-center">
       <h3 class="text-2xl mb-2">Song Writing</h3>
     </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
+    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition h-full flex flex-col justify-center">
       <h3 class="text-2xl mb-2">Vocal Coach</h3>
-    </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
-      <h3 class="text-2xl mb-2">Marketing</h3>
-    </div>
-    <div class="bg-gradient-to-br from-purple-700 to-fuchsia-600 rounded-3xl p-10 text-center hover:scale-105 hover:shadow-fuchsia-500/30 transition">
-      <h3 class="text-2xl mb-2 break-words">Beats</h3>
-
     </div>
   </div>
 </section>
-
-
 
     <!-- ✅ Redes con logos -->
 <section id="contact" class="py-20 px-4 reveal">
@@ -265,6 +264,8 @@
     </a>
   </div>
 
+  
+
 
 <!-- ✅ Mapa actualizado Cartago, Costa Rica -->
 <div class="max-w-4xl mx-auto">
@@ -272,6 +273,7 @@
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15744.648046964024!2d-83.92091570000001!3d9.86444015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0fb581bbd53c1%3A0x5e2062dba83f32d3!2sCartago%2C%20Provincia%20de%20Cartago%2C%20Costa%20Rica!5e0!3m2!1ses!2scr!4v1685648000000!5m2!1ses!2scr"
     style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
+
 
 
     <div class="text-center mt-6 text-gray-400">
@@ -286,6 +288,14 @@
   </footer>
 
   <script>
+      // Pantalla de carga
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500); // Espera mientras termina el fade-out
+  });
     window.addEventListener('scroll', () => {
       document.querySelectorAll('.reveal').forEach(el => {
         const windowHeight = window.innerHeight;
